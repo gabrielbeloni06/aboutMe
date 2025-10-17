@@ -20,7 +20,7 @@
 
 ---
 
-### 👾 Sobre Mim
+### 👾 Sobre o Portfólio
 
 Este é o meu portfólio pessoal, um espaço que criei para mostrar meus projetos e minha paixão por desenvolvimento. A inspiração veio da estética **pixel art noturna** de jogos clássicos, buscando criar uma experiência imersiva e visualmente única.
 
