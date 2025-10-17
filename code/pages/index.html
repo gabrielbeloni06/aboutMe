@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Beloni - Portfólio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="../assets/css/home.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="background-animation-canvas"></canvas>
+
+    <main>
+        <section class="hero-section">
+            <canvas id="snow-canvas"></canvas>
+            <div class="pixel-art-banner"></div>
+            <div class="info-container">
+                <div class="info-box">
+                    <p>GABRIEL BELONI</p>
+                </div>
+                <div class="info-box">
+                    <p class="button">DEV & ESTUDANTE</p>
+                </div>
+                <div class="info-box">
+                    <p class="button">PROJETOS ↓</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="content-section">
+            <h2 class="section-title">SOBRE MIM</h2>
+            <div class="section-content">
+                <p>
+                    Olá! Sou Gabriel Beloni, um estudante de Ciência da Computação apaixonado por resolver problemas e criar tecnologia. Atualmente no segundo período, estou focado em aprofundar meus conhecimentos em algoritmos, desenvolvimento back-end com Java e explorar o universo do desenvolvimento web.
+                </p>
+                <p>
+                    Fora do código, sou atleta e adoro o desafio da corrida, buscando sempre superar meus limites. Acredito que a disciplina e o foco do esporte se aplicam diretamente à forma como encaro a programação.
+                </p>
+            </div>
+        </section>
+
+        <section id="habilidades" class="content-section">
+            <h2 class="section-title">HABILIDADES</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>HARD SKILLS</h3>
+                    <ul>
+                        <li><i class="fab fa-java"></i> Java</li>
+                        <li><i class="fa-solid fa-c"></i> C</li>
+                        <li><i class="fab fa-python"></i> Python</li>
+                        <li><i class="fab fa-react"></i> React </li>
+                        <li><i class="fab fa-html5"></i> HTML </li>
+                        <li><i class="fab fa-js"></i> JavaScript</li>
+                        <li><i class="fas fa-database"></i> SQL</li>
+                        <li><i class="fas fa-laptop-code"></i> Front-end</li>
+                        <li><i class="fas fa-server"></i> Back-end</li>
+                        <li><i class="fas fa-cloud"></i> Cloud Computing</li>
+                        <li><i class="fas fa-tools"></i> Hardware</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>SOFT SKILLS</h3>
+                    <ul>
+                        <li><i class="fas fa-users"></i> Trabalho em Equipe</li>
+                        <li><i class="fas fa-lightbulb"></i> Lógica de Programação</li>
+                        <li><i class="fas fa-rocket"></i> Aprendizado Rápido</li>
+                        <li><i class="fas fa-comments"></i> Comunicação</li>
+                        <li><i class="fas fa-bullseye"></i> Busca por evolução pessoal</li>
+                        <li><i class="fas fa-star"></i> Tranquilidade</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projetos" class="content-section no-border">
+            <h2 class="section-title">MEUS PROJETOS</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="../assets/img/placeholder-1.png" alt="Miniatura da Plataforma de Correção de Códigos" class="project-thumbnail">
+                    <h3>Plataforma de Correção de Códigos</h3>
+                    <p>Projeto em grupo para criar uma plataforma gamificada para programadores, com rankings, desafios e simulação de ambientes.</p>
+                    <div class="project-tags">
+                        <span class="tag tag-java">Java</span>
+                        <span class="tag tag-backend">Back-end</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="action-button details-button" data-project-id="proj1">Detalhes</button>
+                        <div class="project-links-bottom">
+                            <a href="#" class="action-button">Acessar</a>
+                            <a href="#" class="link-button icon-button" title="Ver Código no GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="../assets/img/placeholder-2.png" alt="Miniatura do Website Full-Stack" class="project-thumbnail">
+                    <h3>Website Full-Stack</h3>
+                    <p>Desenvolvimento de um site completo com front-end e back-end em Java, utilizando Eclipse e banco de dados com DBeaver.</p>
+                    <div class="project-tags">
+                        <span class="tag tag-java">Java</span>
+                        <span class="tag tag-frontend">Front-end</span>
+                        <span class="tag tag-sql">SQL</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="action-button details-button" data-project-id="proj2">Detalhes</button>
+                        <div class="project-links-bottom">
+                            <a href="#" class="action-button">Acessar</a>
+                            <a href="#" class="link-button icon-button" title="Ver Código no GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="../assets/img/placeholder-3.png" alt="Miniatura de um projeto futuro" class="project-thumbnail">
+                    <h3>Futuro Projeto Incrível</h3>
+                    <p>Um espaço reservado para o próximo projeto que vou desenvolver para aprimorar minhas habilidades.</p>
+                    <div class="project-tags">
+                        <span class="tag tag-em-breve">Em breve</span>
+                    </div>
+                    <div class="project-links">
+                        <button class="action-button details-button" data-project-id="proj3">Detalhes</button>
+                        <div class="project-links-bottom">
+                            <a href="#" class="action-button">Acessar</a>
+                            <a href="#" class="link-button icon-button" title="Ver Código no GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="project-modal-backdrop" class="modal-backdrop hidden">
+        <div id="project-modal" class="modal">
+            <button id="modal-close-button" class="modal-close-button">&times;</button>
+            <h2 id="modal-title" class="modal-title">Título do Projeto</h2>
+            
+            <div class="carousel">
+                <div id="modal-carousel-images" class="carousel-images"></div>
+                <button id="carousel-prev-button" class="carousel-button prev">&lt;</button>
+                <button id="carousel-next-button" class="carousel-button next">&gt;</button>
+            </div>
+
+            <p id="modal-description" class="modal-description"></p>
+        </div>
+    </div>
+    <footer id="contato" class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>IDIOMAS</h3>
+                <div class="language-flags">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" width="60" height="40"><rect fill="#009B3A" width="9" height="6"/><path fill="#FFCC29" d="M 1.5 3 L 4.5 1.5 L 7.5 3 L 4.5 4.5 Z"/><circle fill="#002776" cx="4.5" cy="3" r="1.1"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 10" width="60" height="40"><path fill="#B22234" d="M 0 0 H 19 V 1 H 0 Z M 0 2 H 19 V 3 H 0 Z M 0 4 H 19 V 5 H 0 Z M 0 6 H 19 V 7 H 0 Z M 0 8 H 19 V 9 H 0 Z"/><path fill="#FFFFFF" d="M 0 1 H 19 V 2 H 0 Z M 0 3 H 19 V 4 H 0 Z M 0 5 H 19 V 6 H 0 Z M 0 7 H 19 V 8 H 0 Z M 0 9 H 19 V 10 H 0 Z"/><path fill="#3C3B6E" d="M 0 0 H 9.5 V 5 H 0 Z"/></svg>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>CONTATO</h3>
+                <a href="mailto:seuemail@exemplo.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> seuemail@exemplo.com
+                </a>
+            </div>
+            <div class="footer-section">
+                <h3>REDES SOCIAIS</h3>
+                <div class="social-links">
+                    <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Gabriel Beloni. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/home.js"></script>
+</body>
+</html>
+
