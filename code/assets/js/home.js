@@ -1,3 +1,8 @@
+window.history.scrollRestoration = 'manual';
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
+
 const snowCanvas = document.getElementById('snow-canvas');
 const snowCtx = snowCanvas.getContext('2d');
 snowCanvas.width = window.innerWidth;
@@ -66,7 +71,6 @@ class Star {
         this.alpha = Math.random() * 0.5 + 0.2;
         this.alphaDirection = 1;
     }
-
     update() {
         this.y += this.speed;
         if (this.y > bgCanvas.height) {
@@ -78,7 +82,6 @@ class Star {
             this.alphaDirection *= -1;
         }
     }
-
     draw() {
         bgCtx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
         bgCtx.fillRect(this.x, this.y, this.size, this.size);
@@ -86,9 +89,7 @@ class Star {
 }
 
 class ShootingStar {
-    constructor() {
-        this.reset();
-    }
+    constructor() { this.reset(); }
     reset() {
         this.x = Math.random() * bgCanvas.width;
         this.y = 0;
@@ -121,12 +122,8 @@ class ShootingStar {
 function initStarfield() {
     stars = [];
     shootingStars = [];
-    for (let i = 0; i < STAR_COUNT; i++) {
-        stars.push(new Star());
-    }
-    for (let i = 0; i < SHOOTING_STAR_COUNT; i++) {
-        shootingStars.push(new ShootingStar());
-    }
+    for (let i = 0; i < STAR_COUNT; i++) { stars.push(new Star()); }
+    for (let i = 0; i < SHOOTING_STAR_COUNT; i++) { shootingStars.push(new ShootingStar()); }
 }
 
 function animateBg() {
@@ -140,7 +137,6 @@ window.addEventListener('resize', () => {
     snowCanvas.width = window.innerWidth;
     snowCanvas.height = window.innerHeight;
     createSnowParticles();
-
     bgCanvas.width = window.innerWidth;
     bgCanvas.height = window.innerHeight;
     initStarfield();
@@ -150,6 +146,7 @@ createSnowParticles();
 animateSnow();
 initStarfield();
 animateBg();
+
 let isScrollLocked = true;
 const keysToBlock = ['ArrowUp', 'ArrowDown', ' ', 'PageUp', 'PageDown', 'Home', 'End'];
 function preventDefault(e) { if (isScrollLocked) e.preventDefault(); }
@@ -204,30 +201,32 @@ scrollLinks.forEach(link => {
 const projectData = {
     proj1: {
         title: "Plataforma de Correção de Códigos",
-        description: "Este foi um projeto acadêmico desenvolvido em grupo com o objetivo de criar uma plataforma online gamificada para estudantes de programação. A ideia central é permitir que os usuários submetam seus códigos para resolver desafios, recebendo feedback automatizado. O sistema inclui um ranking para incentivar a competição saudável e um histórico de submissões para que os alunos possam acompanhar seu progresso. O foco principal foi na robustez do back-end em Java para garantir a segurança e a eficiência na execução e avaliação dos códigos enviados.",
-        images: ["../assets/img/placeholder-1.png", "../assets/img/placeholder-2.png", "../assets/img/placeholder-3.png"]
+        description: "Este foi um projeto acadêmico desenvolvido em grupo com o objetivo de criar uma plataforma interativa e gamificada para estudantes de programação. A ideia central era fornecer um ambiente onde os usuários pudessem submeter seus códigos para desafios, receber feedback automático e competir em um ranking, simulando um ambiente real de desenvolvimento e incentivando a prática constante.",
+        images: ['../assets/img/placeholder-1.png', '../assets/img/placeholder-2.png']
     },
     proj2: {
-        title: "Website Full-Stack com Java",
-        description: "Desenvolvimento de uma aplicação web completa, construída para aprimorar minhas habilidades tanto no front-end quanto no back-end. Utilizei Java para criar a lógica do servidor e a API, enquanto o front-end foi desenvolvido com tecnologias web padrão. A integração com o banco de dados foi gerenciada com DBeaver, permitindo a manipulação e persistência dos dados. Este projeto foi fundamental para solidificar meu entendimento sobre a arquitetura de aplicações web e o fluxo de dados entre cliente e servidor.",
-        images: ["../assets/img/placeholder-2.png", "../assets/img/placeholder-1.png"]
+        title: "Website Full-Stack",
+        description: "Desenvolvimento de um website completo, abordando tanto o front-end quanto o back-end. Utilizando Java para a lógica do servidor e o SGBD DBeaver para o gerenciamento do banco de dados, o projeto foi uma excelente oportunidade para praticar a integração entre a interface do usuário e a persistência de dados, solidificando conceitos de desenvolvimento web de ponta a ponta.",
+        images: ['../assets/img/placeholder-2.png']
     },
     proj3: {
         title: "Futuro Projeto Incrível",
-        description: "Este é um espaço reservado para o meu próximo grande projeto. Estou constantemente buscando novos desafios para expandir meu conhecimento e aplicar o que aprendo. Fique de olho para futuras atualizações!",
-        images: ["../assets/img/placeholder-3.png"]
+        description: "Este é um espaço reservado para documentar minha próxima jornada de aprendizado e desenvolvimento. O objetivo é explorar novas tecnologias, aprofundar meus conhecimentos e construir algo que seja tanto desafiador quanto útil, aplicando as habilidades que venho adquirindo ao longo do meu curso.",
+        images: ['../assets/img/placeholder-3.png']
     }
 };
 
 const modalBackdrop = document.getElementById('project-modal-backdrop');
+const modal = document.getElementById('project-modal');
 const modalTitle = document.getElementById('modal-title');
 const modalDescription = document.getElementById('modal-description');
 const modalCarouselImages = document.getElementById('modal-carousel-images');
-const closeButton = document.getElementById('modal-close-button');
+const closeModalButton = document.getElementById('modal-close-button');
 const detailsButtons = document.querySelectorAll('.details-button');
-
+const prevButton = document.getElementById('carousel-prev-button');
+const nextButton = document.getElementById('carousel-next-button');
 let currentImageIndex = 0;
-let projectImages = [];
+let currentImages = [];
 
 function openModal(projectId) {
     const data = projectData[projectId];
@@ -235,8 +234,7 @@ function openModal(projectId) {
 
     modalTitle.textContent = data.title;
     modalDescription.textContent = data.description;
-    
-    projectImages = data.images;
+    currentImages = data.images;
     currentImageIndex = 0;
     updateCarousel();
 
@@ -246,18 +244,20 @@ function openModal(projectId) {
 
 function closeModal() {
     modalBackdrop.classList.add('hidden');
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
 }
 
 function updateCarousel() {
     modalCarouselImages.innerHTML = '';
-    projectImages.forEach(src => {
+    currentImages.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
-        img.alt = "Imagem do projeto";
+        img.alt = modalTitle.textContent;
         modalCarouselImages.appendChild(img);
     });
     modalCarouselImages.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+    prevButton.style.display = currentImages.length > 1 ? 'block' : 'none';
+    nextButton.style.display = currentImages.length > 1 ? 'block' : 'none';
 }
 
 detailsButtons.forEach(button => {
@@ -267,23 +267,20 @@ detailsButtons.forEach(button => {
     });
 });
 
-closeButton.addEventListener('click', closeModal);
+closeModalButton.addEventListener('click', closeModal);
 modalBackdrop.addEventListener('click', (event) => {
     if (event.target === modalBackdrop) {
         closeModal();
     }
 });
 
-const prevButton = document.getElementById('carousel-prev-button');
-const nextButton = document.getElementById('carousel-next-button');
-
 prevButton.addEventListener('click', () => {
-    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : projectImages.length - 1;
-    updateCarousel();
+    currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : currentImages.length - 1;
+    modalCarouselImages.style.transform = `translateX(-${currentImageIndex * 100}%)`;
 });
 
 nextButton.addEventListener('click', () => {
-    currentImageIndex = (currentImageIndex < projectImages.length - 1) ? currentImageIndex + 1 : 0;
-    updateCarousel();
+    currentImageIndex = (currentImageIndex < currentImages.length - 1) ? currentImageIndex + 1 : 0;
+    modalCarouselImages.style.transform = `translateX(-${currentImageIndex * 100}%)`;
 });
 
