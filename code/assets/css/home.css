@@ -52,11 +52,23 @@ body {
     z-index: 2;
 }
 
-.info-container {
+.info-container-top, .info-container-bottom {
     display: flex;
     gap: 20px;
+    width: 800px;
+    max-width: 90%;
+    position: relative;
+    z-index: 3;
+}
+
+.info-container-top {
+    margin-bottom: -30px; 
+    justify-content: flex-start;
+}
+
+.info-container-bottom {
     margin-top: -30px;
-    z-index: 2;
+    justify-content: flex-end;
 }
 
 .info-box {
@@ -339,7 +351,6 @@ a.link-button.icon-button {
 .tag-frontend { background-color: #1a1b26; color: #9c58ff; border: 1px solid #9c58ff; }
 .tag-git { background-color: #F1502F; color: #FFFFFF; }
 .tag-em-breve { background-color: #8b949e; color: #161b22; }
-
 .modal-backdrop {
     position: fixed;
     top: 0;

@@ -184,9 +184,10 @@ function smoothScrollTo(targetSelector, duration) {
 }
 
 const scrollLinks = [
-    { buttonSelector: '.info-container .info-box:nth-child(2)', targetId: '#sobre' },
-    { buttonSelector: '.info-container .info-box:nth-child(3)', targetId: '#projetos' }
+    { buttonSelector: '.info-container-bottom .info-box:nth-child(1)', targetId: '#sobre' },
+    { buttonSelector: '.info-container-bottom .info-box:nth-child(2)', targetId: '#projetos' }
 ];
+
 scrollLinks.forEach(link => {
     const button = document.querySelector(link.buttonSelector);
     if (button) {
