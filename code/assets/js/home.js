@@ -201,14 +201,14 @@ scrollLinks.forEach(link => {
 
 const projectData = {
     proj1: {
-        title: "Plataforma de Correção de Códigos",
-        description: "Este foi um projeto acadêmico desenvolvido em grupo com o objetivo de criar uma plataforma interativa e gamificada para estudantes de programação. A ideia central era fornecer um ambiente onde os usuários pudessem submeter seus códigos para desafios, receber feedback automático e competir em um ranking, simulando um ambiente real de desenvolvimento e incentivando a prática constante.",
-        images: ['../assets/img/placeholder-1.png', '../assets/img/placeholder-2.png']
+        title: "Currency Converter",
+        description: "Este foi um projeto pessoal o qual utiliza back-end em Python como principal funcionalidade para a integração com uma API de informações monetárias em tempo real, o qual permite a conversão entre duas moedas de sua escolha, além de sua interface moderna e detalhada.",
+        images: ['assets/img/conversionpage.png', 'assets/img/valorpage.png']
     },
     proj2: {
-        title: "Website Full-Stack",
-        description: "Desenvolvimento de um website completo, abordando tanto o front-end quanto o back-end. Utilizando Java para a lógica do servidor e o SGBD DBeaver para o gerenciamento do banco de dados, o projeto foi uma excelente oportunidade para praticar a integração entre a interface do usuário e a persistência de dados, solidificando conceitos de desenvolvimento web de ponta a ponta.",
-        images: ['../assets/img/placeholder-2.png']
+        title: "Navi Code",
+        description: "Este foi um projeto acadêmico desenvolvido em grupo com o objetivo de criar uma plataforma interativa para estudantes de programação. A ideia central era fornecer um ambiente onde os usuários pudessem submeter seus códigos para desafios, receber feedback automático e competir em um ranking, simulando um ambiente real de desenvolvimento e incentivando a prática constante.",
+        images: ['assets/img/editor.png', 'assets/img/rank.png', 'assets/img/ex.png']
     },
     proj3: {
         title: "Futuro Projeto Incrível",

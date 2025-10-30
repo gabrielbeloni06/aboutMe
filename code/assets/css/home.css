@@ -342,13 +342,15 @@ a.link-button.icon-button {
     font-size: 24px;
 }
 
-.tag-java { background-color: #5382A1; color: #FFFFFF; }
+.tag-java { background-color: #b6b900; color: #FFFFFF; }
 .tag-html { background-color: #E34C26; color: #FFFFFF; }
 .tag-css { background-color: #264DE4; color: #FFFFFF; }
 .tag-javascript { background-color: #F0DB4F; color: #323330; }
 .tag-sql { background-color: #4479A1; color: #FFFFFF; }
 .tag-backend { background-color: #1a1b26; color: #58a6ff; border: 1px solid #58a6ff; }
 .tag-frontend { background-color: #1a1b26; color: #9c58ff; border: 1px solid #9c58ff; }
+.tag-python { background-color: #000000; color: #FFFFFF; }
+.tag-automatic { background-color: #F1502F; color: #FFFFFF; }
 .tag-git { background-color: #F1502F; color: #FFFFFF; }
 .tag-em-breve { background-color: #8b949e; color: #161b22; }
 .modal-backdrop {
