@@ -13,7 +13,7 @@
 
 
   <p align="center">
-    <strong>Gabriel Beloni Portfólio</strong>
+    <strong>Seja Bem-Vindo Ao Meu Portfólio</strong>
   </p>
 
   <div style="display: inline-block;">
@@ -25,7 +25,7 @@
 
 </div>
 
-## ⚡ Sobre o Porfólio
+## ⚡ Sobre o Portfólio
 
 Este portfólio foi desenvolvido para demonstrar e listar a minha história com programação e meu conhecimento. 
 
@@ -41,11 +41,11 @@ O núcleo da aplicação foi construído com as ferramentas mais modernas do eco
 
 | Tecnologia | Função no Projeto |
 | :--- | :--- |
-| **React | Core da aplicação, garantindo HMR instantâneo e build otimizado. |
-| **Three.js** | Renderização do background "Black Hole" (Sistema de Partículas 3D). |
+| **React** | Core da aplicação, garantindo HMR instantâneo e build otimizado. |
+| **Three.js** | Renderização do background "Black Hole". |
 | **Framer Motion** | Orquestração de animações de entrada, parallax e transições de layout. |
 | **Tailwind CSS** | Estilização utility-first para layout responsivo e design system. |
-| **Lenis Scroll** | Suavização da rolagem (Smooth Scroll) para sensação premium. |
+| **Lenis Scroll** | Suavização da rolagem para sensação leve. |
 | **Lucide React** | Ícones vetoriais leves e otimizados. |
 
 ---
