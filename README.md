@@ -1,54 +1,66 @@
+<br>
+
+<div align="center">
+  <img src="portfolio/src/assets/img/background2.jpg" alt="Portfolio Preview" width="100%" style="border-radius: 8px; border: 1px solid #333;">
+</div>
+
+<br>
 <div align="center">
 
 <h1 align="center">
-  <img 
-    src="https://readme-typing-svg.herokuapp.com/?font=Press+Start+2P&size=30&center=true&vCenter=true&width=500&height=70&duration=4000&lines=About+Me&color=58A6FF"
-  />
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Inter&weight=700&size=35&center=true&vCenter=true&width=600&height=80&duration=4000&lines=PORTFÓLIO+BELONI&color=000099" alt="Typing SVG" />
 </h1>
 
-### ✨ **Meu Portfólio Pixelado** ✨
+
+  <p align="center">
+    <strong>Gabriel Beloni Portfólio</strong>
+  </p>
+
+  <div style="display: inline-block;">
+    <img src="https://img.shields.io/badge/React-WEB-blue?style=for-the-badge&logo=react" alt="React">
+    <img src="https://img.shields.io/badge/Three.js-Animation-white?style=for-the-badge&logo=three.js" alt="Three.js">
+    <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind">
+    <img src="https://img.shields.io/badge/Framer-Motion-black?style=for-the-badge&logo=framer" alt="Framer Motion">
+  </div>
 
 </div>
 
-<br>
+## ⚡ Sobre o Porfólio
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/gabrielbeloni06/aboutMe/refs/heads/main/code/assets/img/night-sky.png" alt="Banner do Portfólio Pixel Art" width="800">
-</div>
+Este portfólio foi desenvolvido para demonstrar e listar a minha história com programação e meu conhecimento. 
 
-<br>
+Fugindo do padrão estático, o projeto utiliza **WebGL** e micro-interações físicas para criar uma experiência imersiva. Cada componente foi pensado para performance, utilizando rendering otimizado no React e estilização atômica.
 
----
-
-### 👾 Sobre o Portfólio
-
-Este é o meu portfólio pessoal, um espaço que criei para mostrar meus projetos e minha paixão por desenvolvimento. A inspiração veio da estética **pixel art noturna** de jogos clássicos, buscando criar uma experiência imersiva e visualmente única.
-
-O projeto foi construído do zero com as tecnologias essenciais da web para demonstrar um forte domínio das bases.
+A estética segue o conceito **"Dark Premium"**, com influências de hardware e sistemas operacionais modernos (Glassmorphism, Bento Grids e Iluminação Dinâmica).
 
 ---
 
-### 🚀 Tecnologias Utilizadas
+## 🛠️ Stack Tecnológica
 
-<div align="center">
-  
-![HTML5](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+O núcleo da aplicação foi construído com as ferramentas mais modernas do ecossistema React:
 
-</div>
+| Tecnologia | Função no Projeto |
+| :--- | :--- |
+| **React | Core da aplicação, garantindo HMR instantâneo e build otimizado. |
+| **Three.js** | Renderização do background "Black Hole" (Sistema de Partículas 3D). |
+| **Framer Motion** | Orquestração de animações de entrada, parallax e transições de layout. |
+| **Tailwind CSS** | Estilização utility-first para layout responsivo e design system. |
+| **Lenis Scroll** | Suavização da rolagem (Smooth Scroll) para sensação premium. |
+| **Lucide React** | Ícones vetoriais leves e otimizados. |
 
 ---
 
-### 🎮 Funcionalidades Principais
+## 💎 Destaques WEB & UX
 
-* **Header Imersivo:** Uma cena inicial com animação de neve e botões interativos.
-* **Animação de Fundo:** Um campo de estrelas pixelado com efeito de paralaxe e estrelas cadentes.
-* **Modal de Projetos:** Janelas de detalhes com carrossel de imagens para cada projeto.
-* **Design Coeso:** Identidade visual 100% focada na estética pixel art.
-* **Footer Completo:** Com informações de contato, redes sociais e idiomas.
+* **🌌 3D Particle System:** Um fundo interativo com milhares de partículas renderizadas em Canvas (WebGL), simulando um horizonte de eventos que reage ao scroll.
+* **⚡ High-Voltage Borders:** Cards interativos na seção "Sobre" que calculam a posição do mouse em tempo real para renderizar um brilho de borda (efeito *glow*), sem uso de imagens pesadas.
+* **🍱 Bento Grid Layout:** Organização de conteúdo modular inspirada em dashboards de análise de dados e design Apple.
+* **🌫️ Glassmorphism Dinâmico:** Uso intenso de `backdrop-filter` para criar profundidade entre as camadas de fundo (Parallax) e o conteúdo frontal.
 
-<p align="center">
-  Desenvolvido com 💙 por Gabriel Beloni.
-</p>
+---
+
+## Acesse em:
+
+`
+https://gabrielbeloni.netlify.app
+`
