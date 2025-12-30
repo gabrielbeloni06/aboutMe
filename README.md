@@ -62,5 +62,5 @@ O núcleo da aplicação foi construído com as ferramentas mais modernas do eco
 ## Acesse em:
 
 `
-https://gabrielbeloni.netlify.app
+https://gabrielbeloni.vercel.app
 `
