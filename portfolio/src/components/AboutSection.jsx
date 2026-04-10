@@ -1,114 +1,92 @@
-import React, { useRef, useState } from 'react';
-import { Code2, Cpu, Database, Globe, Terminal, Zap } from 'lucide-react';
-import foto from '../assets/img/perfil.jpg';
-const GlowingBorderCard = ({ children, className = "" }) => {
-  const divRef = useRef(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Github, Linkedin, Instagram } from 'lucide-react';
 
-  const handleMouseMove = (e) => {
-    if (!divRef.current) return;
-    const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
-  const handleMouseEnter = () => setOpacity(1);
-  const handleMouseLeave = () => setOpacity(0);
-
-  return (
-    <div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className={`relative rounded-xl overflow-hidden bg-white/10 ${className} p-[1px] group`}
-    >
-      <div
-        className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
-        style={{
-          opacity,
-          background: `radial-gradient(800px circle at ${position.x}px ${position.y}px, rgba(255, 255, 255, 1), transparent 40%)`,
-        }}
-      />
-      <div className="relative h-full bg-black/80 backdrop-blur-xl rounded-[11px] z-10 p-8 h-full">
-         {children}
-      </div>
-    </div>
-  );
-};
-
-const techStack = [
-  { icon: <Globe size={20} />, name: "Frontend", desc: "React, Tailwind, Three.js" },
-  { icon: <Database size={20} />, name: "Backend", desc: "Node.js, Java, Python" },
-  { icon: <Cpu size={20} />, name: "Hardware", desc: "Architecture & Performance" },
-  { icon: <Terminal size={20} />, name: "Tools", desc: "Git, Docker, Windows, Linux" },
-  { icon: <Zap size={20} />, name: "DevOps", desc: "AWS, Azure" },
-  { icon: <Code2 size={20} />, name: "Languages", desc: "C, Java, Python" },
-  { icon: <Database size={20} />, name: "Databases", desc: "SQL, Oracle" }
-];
 export default function AboutSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center p-6 py-20 relative overflow-hidden">
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
-        style={{ 
-          backgroundImage: "url('https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?q=80&w=2670&auto=format&fit=crop')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black/80" /> 
-      </div>
-      <div className="relative z-10 max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-6">
-        <GlowingBorderCard className="md:col-span-2 flex flex-col justify-center">
-          <div className="absolute top-6 right-6 text-white/10 rotate-12">
-            <Code2 size={80} />
+    <div className="w-full min-h-screen flex items-center justify-center p-6 md:p-12 overflow-y-auto md:overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 w-full max-w-7xl mx-auto items-center py-10">
+        
+        <div className="md:col-span-5 flex flex-col justify-center text-left space-y-8 h-full">
+          <div>
+            <h2 className="text-sm font-mono text-[#00E5FF] tracking-widest uppercase mb-3 drop-shadow-[0_0_10px_rgba(0,229,255,0.8)]">
+              QUEM SOU EU
+            </h2>
+            <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-white">
+              GABRIEL BELONI
+            </h1>
           </div>
-          <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">
-            Sobre Mim
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Desenvolvedor Full Stack <br/> & Estudante de Ciência da Computação
-          </h3>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-2xl font-light z-20 relative">
-            Atualmente estagiário de planejamento na <strong>Vivo</strong>. 
-            Desenvolvo soluções onde a otimização de software encontra o design visual. 
-            Focado em criar sistemas robustos e interfaces de alto design.
+          
+          <p className="text-sm md:text-lg text-gray-300 font-mono leading-relaxed bg-[#030303]/80 p-6 border border-white/5 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            EU SOU UM DESENVOLVEDOR E CRIADOR MOVIDO PELA INTERSECÇÃO ENTRE A LÓGICA COMPUTACIONAL E A EXPERIÊNCIA IMERSIVA. MINHA JORNADA COMEÇOU NO INÍCIO DE 2023, ONDE OS PRIMEIROS CÓDIGOS ACENDERAM UMA PAIXÃO QUE ME GUIA ATÉ HOJE.
           </p>
-        </GlowingBorderCard>
-        <GlowingBorderCard className="md:col-span-1 min-h-[300px] relative p-0 overflow-hidden">
-             <div className="absolute inset-0 z-0">
-               <img 
-                 src={foto}
-                 alt="Foto"
-                 className="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity duration-500 group-hover:scale-105"
-               />
-             </div>
-             <div className="absolute bottom-4 left-4 z-10">
-                <span className="text-xs font-mono text-green-400 bg-green-400/10 px-2 py-1 rounded border border-green-400/20">
-                  ONLINE NOW
-                </span>
-             </div>
-        </GlowingBorderCard>
-        <GlowingBorderCard className="md:col-span-3">
-           <div className="flex items-center gap-3 mb-6">
-              <Zap className="text-white fill-white" size={20} />
-              <h3 className="text-xl font-bold text-white tracking-wide">Habilidades</h3>
-           </div>
-           
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {techStack.map((tech, i) => (
-                <div key={i} className="flex items-start gap-4 p-2 rounded transition-colors">
-                   <div className="mt-1 text-gray-400 group-hover:text-white transition-colors">
-                      {tech.icon}
-                   </div>
-                   <div>
-                       <h4 className="text-white font-medium text-sm">{tech.name}</h4>
-                       <p className="text-xs text-gray-500 font-mono">{tech.desc}</p>
-                   </div>
-                </div>
-              ))}
-           </div>
-        </GlowingBorderCard>
+
+          <div className="flex flex-col gap-4 pt-4">
+            <span className="text-xs text-[#00E5FF] uppercase tracking-widest opacity-70">Conexões</span>
+            
+            <a href="https://www.linkedin.com/in/devgabrielbeloni" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-lg text-gray-300 hover:text-[#00E5FF] transition-colors group w-max">
+              <Linkedin size={20} /> LinkedIn 
+              <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity translate-y-1 group-hover:translate-y-0 duration-300"/>
+            </a>
+            
+            <a href="https://github.com/gabrielbeloni06" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-lg text-gray-300 hover:text-[#00E5FF] transition-colors group w-max">
+              <Github size={20} /> GitHub 
+              <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity translate-y-1 group-hover:translate-y-0 duration-300"/>
+            </a>
+            
+            <a href="https://www.instagram.com/gabrielbeloni_" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-lg text-gray-300 hover:text-[#00E5FF] transition-colors group w-max">
+              <Instagram size={20} /> Instagram 
+              <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity translate-y-1 group-hover:translate-y-0 duration-300"/>
+            </a>
+          </div>
+        </div>
+
+        <div className="md:col-span-7 relative grid grid-cols-2 gap-6 items-center mt-12 md:mt-0">
+          
+          <div className="relative col-start-2 row-start-1 flex items-end">
+            <img 
+              src="/img1.jpg" 
+              alt="Gabriel - Visão Imersiva (2026)" 
+              className="w-full h-72 md:h-[350px] object-cover border-2 border-[#00E5FF]/40 shadow-[0_0_20px_rgba(0,229,255,0.3)]"
+            />
+            <div className="absolute -right-4 md:-right-6 top-[65%] bg-[#030303] p-4 text-xs font-mono border border-[#00E5FF] shadow-[0_0_10px_rgba(0,229,255,0.6)] w-60 z-20">
+                <span className="text-[#00E5FF] font-bold">DESENVOLVEDOR</span> - Criando experiências que transportam o usuário.
+            </div>
+            <p className="absolute bottom-2 left-2 text-[10px] text-white/50 font-mono drop-shadow-md bg-black/40 px-1">
+              Gabriel, confident, look from era 2026
+            </p>
+          </div>
+
+          <div className="relative col-start-1 row-start-2 -mt-10 z-10 flex flex-col items-center">
+            <img 
+              src="/img2.jpg" 
+              alt="Gabriel - Arquitetura na Vivo (2025)" 
+              className="w-full h-80 md:h-[400px] object-cover border border-purple-600/60 shadow-[0_0_20px_rgba(147,51,234,0.2)]"
+            />
+            <div className="absolute -left-6 md:-left-10 bottom-[20%] bg-[#030303] p-4 text-xs font-mono border border-purple-600 shadow-[0_0_10px_rgba(147,51,234,0.5)] w-56 z-20">
+                <span className="text-purple-400 font-bold">ESTRUTURANDO O FUTURO</span> - Da base em Ciência da Computação à otimização na Vivo.
+            </div>
+            <p className="absolute bottom-2 right-2 text-[10px] text-white/50 font-mono drop-shadow-md bg-black/40 px-1">
+              Gabriel, focused on data, look from era 2025/Vivo
+            </p>
+          </div>
+
+          <div className="relative col-start-2 row-start-3 -mt-16 flex items-start">
+             <img 
+              src="/img3.jpg" 
+              alt="Gabriel - Base em Ciência (2023)" 
+              className="w-full h-48 md:h-[350px] object-cover border border-gray-800 shadow-[0_0_20px_rgba(0,0,0,0.6)]"
+            />
+            <div className="absolute left-[-20%] top-1/2 -translate-y-1/2 bg-[#030303] p-4 text-xs font-mono border border-gray-700 shadow-[0_0_10px_rgba(0,0,0,0.4)] w-40 z-20">
+                <span className="text-gray-400 font-bold">BASE</span> - Onde tudo começou.
+            </div>
+            <p className="absolute top-2 left-2 text-[10px] text-white/50 font-mono drop-shadow-md bg-black/40 px-1">
+              Gabriel, beginning, look from era 2024/2025
+            </p>
+          </div>
+          
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
