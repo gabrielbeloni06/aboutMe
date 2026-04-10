@@ -6,7 +6,6 @@ import TimelineSection from './components/TimelineSection';
 import AboutSection from './components/AboutSection';
 import ProjectSection from './components/ProjectSection'; 
 import SkillsConstellation from './components/SkillsConstellation';
-import Footer from './components/Footer';
 import EarthSection from './components/EarthSection';
 
 export default function App() {
